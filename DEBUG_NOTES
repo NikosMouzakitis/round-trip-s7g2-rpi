@@ -1,0 +1,16 @@
+
+
+**Debug elf on the target platform
+
+> JLinkExe -if SWD -speed 4000 -autoconnect 1 //(flash and 'r'  to reset the platform)
+
+> JLinkGDBServer -device R7FS7G27H -if SWD -speed 4000
+
+> gdb-multiarch Build/uart_test.elf 
+
+	> target remote localhost:2331
+
+	> b user_uart_callback
+		> c (continue)
+		> print pargs->event (observe the events triggering the callback each time)
+

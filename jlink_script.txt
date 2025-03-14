@@ -1,0 +1,8 @@
+device R7FS7G27H
+connect
+S
+speed 4000
+loadfile Build/uart_test.elf
+r
+g
+exit
