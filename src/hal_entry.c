@@ -81,10 +81,6 @@ void hal_entry(void)
 			reception_complete_flag = 0; //reset it to zero. only reply when we have received a message.
 		}
 
-		//uart reception.
-		g_uart0.p_api->read(g_uart0.p_ctrl, NULL, NULL);
-
-		//g_uart0.p_api->read(g_uart0.p_ctrl, receive_buffer, sizeof(receive_buffer)); // this way the full buffer has to complete(all bytes before UART_EVENT_RX_COMPLETE) triggers the callback.
 		//logic to swap pin-levels.
 		if(IOPORT_LEVEL_LOW == level)
 		{
